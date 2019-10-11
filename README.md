@@ -77,3 +77,4 @@ Attributes Information
 18. ALBUMIN: 2.1, 3.0, 3.8, 4.5, 5.0, 6.0
 19. PROTIME: 10, 20, 30, 40, 50, 60, 70, 80, 90
 20. HISTOLOGY: no, yes
+
