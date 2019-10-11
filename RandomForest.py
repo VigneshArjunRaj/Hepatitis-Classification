@@ -38,13 +38,13 @@ class Classifiers:
         sc = StandardScaler()
         X_train = sc.fit_transform(X_train)
         X_test = sc.transform(X_test)
-  def knn(self, n_neighbors=6, weights='uniform', algorithm='auto', leaf_size=30, p=2, metric='minkowski', metric_params=None, n_jobs=None):
-        xgb=KNeighborsClassifier( n_neighbors, weights, algorithm, leaf_size, p, metric, metric_params, n_jobs)
-        xgb.fit(X_train,y_train)
-        y_pred=xgb.predict(X_test)
+  def RandomForest(self, n_estimators=300, criterion="gini", max_depth=None, min_samples_split=2, min_samples_leaf=1, min_weight_fraction_leaf=0., max_features="auto", max_leaf_nodes=None, min_impurity_decrease=0., min_impurity_split=None, bootstrap=True, oob_score=False, n_jobs=None, random_state=None, verbose=0, warm_start=False, class_weight=None):
+        rf=RandomForestClassifier(n_estimators, criterion, max_depth, min_samples_split, min_samples_leaf, min_weight_fraction_leaf, max_features, max_leaf_nodes, min_impurity_decrease, min_impurity_split, bootstrap, oob_score, n_jobs, random_state, verbose, warm_start, class_weight)
+        rf.fit(X_train,y_train)
+        y_pred=rf.predict(X_test)
         acc=accuracy_score(y_test,y_pred)
         cm=confusion_matrix(y_test,y_pred)
-        y_pred_prob=xgb.predict_proba(X_test)
+        y_pred_prob=rf.predict_proba(X_test)
         return y_pred,acc,cm,y_pred_prob
 data1=input("Enterdata set")
 x=input("enter")
