@@ -1,5 +1,5 @@
 # Hepatitis-Classification
-Hepatitis Die or Live Classification, 82% Accuracy using K Nearest Neighbors Classifier
+Hepatitis Die or Live Classification, 82% Accuracy using Random Forest Classifier with 300 n_estimators
 
 Data Set taken from UCI Machine Learning Repository https://archive.ics.uci.edu/ml/datasets/hepatitis
 Confusion Matrix
